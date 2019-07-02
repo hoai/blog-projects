@@ -74,9 +74,10 @@ public class RequestTraceFilter extends WebRequestTraceFilter {
         ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper(request);
         ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
         filterChain.doFilter(requestWrapper, responseWrapper);
-        responseWrapper.copyBodyToResponse();
+
         request.setAttribute(REQUEST_BODY, getRequestBody(requestWrapper));
         request.setAttribute(RESPONSE_BODY, getResponseBody(responseWrapper));
+        responseWrapper.copyBodyToResponse();
         super.doFilterInternal(requestWrapper, responseWrapper, filterChain);
     }
 
