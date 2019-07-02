@@ -1,8 +1,6 @@
 management:
   security:
     enabled: false
-  trace:
-    include: remote_address, parameters, responseBody
 spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
