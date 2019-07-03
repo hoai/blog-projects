@@ -81,48 +81,6 @@ public class RequestTraceFilter extends WebRequestTraceFilter {
         super.doFilterInternal(requestWrapper, responseWrapper, filterChain);
     }
 
-//
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-//            throws ServletException, IOException {
-//        ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper(request);
-//        ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
-//
-//        TeeHttpServletResponse teeResponse = new TeeHttpServletResponse(responseWrapper);
-//
-//        filterChain.doFilter(responseWrapper, responseWrapper);
-//
-//        teeResponse.finish();
-//
-//        request.setAttribute("responseBody", teeResponse.getOutputBuffer());
-//
-//        super.doFilterInternal(request, teeResponse, filterChain);
-//    }
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-//            throws ServletException, IOException {
-//        ContentCachingRequestWrapper requestWrapper = new ContentCachingRequestWrapper(request);
-//        ContentCachingResponseWrapper responseWrapper = new ContentCachingResponseWrapper(response);
-//        filterChain.doFilter(requestWrapper, responseWrapper);
-//        responseWrapper.copyBodyToResponse();
-//        request.setAttribute(REQUEST_BODY, getRequestBody(requestWrapper));
-//        request.setAttribute(RESPONSE_BODY, getResponseBody(responseWrapper));
-//        super.doFilterInternal(requestWrapper, responseWrapper, filterChain);
-//    }
-
-//    @Override
-//    protected Map<String, Object> getTrace(HttpServletRequest request) {
-//        Map<String, Object> trace = super.getTrace(request);
-//
-//        byte[] outputBuffer = (byte[]) request.getAttribute("responseBody");
-//
-//        if (outputBuffer != null) {
-//            trace.put("responseBody", new String(outputBuffer));
-//        }
-//
-//        return trace;
-//    }
-
     @Override
     protected boolean shouldNotFilter(final HttpServletRequest request) throws ServletException {
         return Arrays.stream(excludedEndpoints).anyMatch(e -> new AntPathMatcher().match(e, request.getServletPath()));
