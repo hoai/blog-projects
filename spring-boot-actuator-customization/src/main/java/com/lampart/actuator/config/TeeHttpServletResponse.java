@@ -1,4 +1,4 @@
-package com.sedooe.actuator.config;
+package com.lampart.actuator.config;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

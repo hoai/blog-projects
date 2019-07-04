@@ -11,9 +11,9 @@
  * under the terms of the GNU Lesser General Public License version 2.1
  * as published by the Free Software Foundation.
  */
-package com.sedooe.actuator.config;
+package com.lampart.actuator.config;
 
-import static com.sedooe.actuator.config.AccessConstants.LB_INPUT_BUFFER;
+import static com.lampart.actuator.config.AccessConstants.LB_INPUT_BUFFER;
 
 import java.io.BufferedReader;
 import java.io.IOException;

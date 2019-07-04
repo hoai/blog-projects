@@ -1,4 +1,4 @@
-package com.sedooe.actuator.mvc;
+package com.lampart.actuator.mvc;
 
 public class Customer {
     private Integer customerId;

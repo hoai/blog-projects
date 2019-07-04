@@ -1,8 +1,8 @@
-package com.sedooe.actuator.config;
+package com.lampart.actuator.config;
 
-import static com.sedooe.actuator.config.AccessConstants.LB_OUTPUT_BUFFER;
-import static com.sedooe.actuator.config.AccessConstants.TEE_FILTER_EXCLUDES_PARAM;
-import static com.sedooe.actuator.config.AccessConstants.TEE_FILTER_INCLUDES_PARAM;
+import static com.lampart.actuator.config.AccessConstants.LB_OUTPUT_BUFFER;
+import static com.lampart.actuator.config.AccessConstants.TEE_FILTER_EXCLUDES_PARAM;
+import static com.lampart.actuator.config.AccessConstants.TEE_FILTER_INCLUDES_PARAM;
 
 import java.io.IOException;
 import java.net.InetAddress;

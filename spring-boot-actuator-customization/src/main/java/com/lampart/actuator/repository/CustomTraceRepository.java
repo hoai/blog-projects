@@ -1,4 +1,4 @@
-package com.sedooe.actuator.repository;
+package com.lampart.actuator.repository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

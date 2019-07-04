@@ -1,4 +1,4 @@
-package com.sedooe.actuator.mvc;
+package com.lampart.actuator.mvc;
 
 import java.util.HashMap;
 import java.util.Map;
