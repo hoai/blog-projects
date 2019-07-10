@@ -21,6 +21,9 @@ public class Controller {
     @Autowired
     private PersonService personService;
 
+    @Autowired
+    private ServiceOther serviceOther;
+
     @RequestMapping(value = "/resource", method = RequestMethod.GET)
     public Map<String, String> getResource() {
         Map<String, String> resource = new HashMap<String, String>();
@@ -34,6 +37,13 @@ public class Controller {
         Map<String, String> resource = new HashMap<String, String>();
         resource.put("Name", personService.getFullName(person));
         resource.put("Age", String.valueOf(personService.getAge(person)));
+
+        try {
+            serviceOther.serve();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         // System.out.println("Name is:" + personService.getFullName(person));
         // System.out.println("Age is:" + String.valueOf(personService.getAge(person)));
         return resource;
